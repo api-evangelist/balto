@@ -1,9 +1,31 @@
 aid: balto
 name: Balto
-description: 'Balto is a company surfaced as a portfolio company of sierra-ventures and added to the API
-  Evangelist network as a stub for enrichment. Sector: ai. This profile is a lead awaiting the enrichment
-  pipeline.'
+description: >-
+  Balto is a contact center AI platform that pairs live human agents with real-time
+  AI to improve conversation quality, compliance, efficiency, and revenue. Its unified
+  system delivers real-time agent guidance (Agent Assist), automated quality assurance
+  that auto-scores 100% of interactions, real-time compliance monitoring and risk
+  alerting, AI coaching, call summarization (Real-Time Notetaker), omnichannel voice
+  and digital support, and a Voice AI Agent (Togo) for high-volume repeatable calls.
+  Balto integrates with 50+ contact center (CCaaS) platforms including Five9, Genesys,
+  Amazon Connect, NICE inContact, RingCentral, and Convoso, and exposes a Call Data API
+  for exporting historical call records into external systems and data warehouses.
+  Founded in St. Louis, Balto is backed by Sierra Ventures. This profile was enriched
+  from Balto's public web surface; the developer documentation at docs.balto.ai sits
+  behind an authenticated login, so no public OpenAPI was available to harvest.
 url: https://raw.githubusercontent.com/api-evangelist/balto/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://cdn.sanity.io/images/jnw43o37/production/b992c6f0d9016403311c1da51bd5bef4effc8988-1200x630.png
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
@@ -12,10 +34,19 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
 tags:
 - Company
 - Ai
+- Contact Center
+- Conversation Intelligence
+- Agent Assist
+- Real-Time Guidance
+- Quality Assurance
+- Compliance
+- Call Center
+- CCaaS
+- Voice AI
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -25,3 +56,38 @@ maintainers:
 common:
 - type: Website
   url: https://balto.ai/
+- type: DeveloperPortal
+  url: https://docs.balto.ai/
+- type: Documentation
+  url: https://www.balto.ai/docs/
+- type: Integrations
+  url: https://www.balto.ai/integrations/
+- type: Support
+  url: https://www.balto.ai/contact/
+- type: Blog
+  url: https://www.balto.ai/blog/
+- type: Login
+  url: https://login.balto.ai/
+- type: SignUp
+  url: https://www.balto.ai/get-demo/
+- type: TermsOfService
+  url: https://www.balto.ai/terms/terms-of-service/
+- type: PrivacyPolicy
+  url: https://www.balto.ai/terms/privacy-policy/
+- type: StatusPage
+  url: https://status.balto.ai/
+- type: TrustCenter
+  url: https://trust.balto.ai/
+- type: Compliance
+  url: https://www.balto.ai/security/
+- type: Lifecycle
+  url: lifecycle/balto-lifecycle.yml
+- type: DomainSecurity
+  url: security/balto-domain-security.yml
+- type: LLMsTxt
+  url: llms/balto-llms.txt
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

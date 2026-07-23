@@ -1,0 +1,17 @@
+generated: '2026-07-18'
+method: searched
+source: https://status.balto.ai/
+status_page: https://status.balto.ai/
+versioning:
+  scheme: unknown
+  notes: >-
+    Balto operates a public API surface (Call Data API and softphone/integration
+    APIs) documented at docs.balto.ai, but the developer documentation sits behind
+    an authenticated login (login.balto.ai), so a public versioning/deprecation
+    policy could not be verified.
+deprecation:
+  policy_url: null
+  sunset_header: null
+sla:
+  url: null
+deprecated_operations: []
