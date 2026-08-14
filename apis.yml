@@ -11,8 +11,11 @@ description: >-
   Amazon Connect, NICE inContact, RingCentral, and Convoso, and exposes a Call Data API
   for exporting historical call records into external systems and data warehouses.
   Founded in St. Louis, Balto is backed by Sierra Ventures. This profile was enriched
-  from Balto's public web surface; the developer documentation at docs.balto.ai sits
-  behind an authenticated login, so no public OpenAPI was available to harvest.
+  from Balto's public web surface; the Docs Hub at docs.balto.ai is a ReadMe-hosted
+  site that redirects every path, including /reference and /openapi.json, to
+  login.balto.ai, and Balto states the hub — which holds its full API documentation —
+  is available exclusively to current customers with Balto Cloud credentials, so no
+  public OpenAPI, GraphQL, AsyncAPI or MCP contract was available to harvest.
 url: https://raw.githubusercontent.com/api-evangelist/balto/refs/heads/main/apis.yml
 accessModel:
   pricing: unknown
@@ -34,7 +37,7 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-18'
+modified: '2026-08-14'
 tags:
 - Company
 - Ai
@@ -47,7 +50,32 @@ tags:
 - Call Center
 - CCaaS
 - Voice AI
-apis: []
+apis:
+- name: Balto Call Data API
+  description: >-
+    Balto's Call Data API gives customers programmatic access to their historical
+    call records so they can transfer, analyse and activate that data in a CRM,
+    data warehouse or any system that accepts API-based ingestion, without needing
+    a native CCaaS integration. Balto runs it as a separately monitored production
+    service — "Balto Data API" is its own component on status.balto.ai. The
+    reference documentation is inside the customer-only Docs Hub, so the base URL,
+    authentication model, operations and limits are not published publicly and no
+    baseURL is recorded here rather than guessed.
+  humanURL: https://www.balto.ai/integrations/call-data-api/
+  x-base-url: undisclosed
+  x-base-url-reason: >-
+    API reference is gated behind login.balto.ai; no api.* host resolves in DNS and
+    none appears in certificate transparency for balto.ai (checked 2026-08-14).
+  tags:
+  - Call Data
+  - Conversation Intelligence
+  - Data Export
+  - Contact Center
+  properties:
+  - type: Documentation
+    url: https://docs.balto.ai/
+  - type: StatusPage
+    url: https://status.balto.ai/
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -66,6 +94,8 @@ common:
   url: https://www.balto.ai/contact/
 - type: Blog
   url: https://www.balto.ai/blog/
+- type: GitHubOrganization
+  url: https://github.com/BaltoSoftware
 - type: Login
   url: https://login.balto.ai/
 - type: SignUp
@@ -86,8 +116,39 @@ common:
   url: security/balto-domain-security.yml
 - type: LLMsTxt
   url: llms/balto-llms.txt
+- type: Conformance
+  url: conformance/balto-conformance.yml
+- type: Plans
+  url: plans/balto-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/balto-rate-limits.yml
 x-enrichment:
-  date: '2026-07-19'
-  status: backfilled
+  date: '2026-08-14'
+  status: minimal
+  artifacts_added: 4
   pass: local-v1
-  note: backfilled from .gitignore signal + verified work evidence
+  note: >-
+    Contract discovery ran against every Balto-controlled host (balto.ai,
+    www.balto.ai, docs.balto.ai, login.balto.ai, status.balto.ai, trust.balto.ai
+    plus every subdomain in certificate transparency). No OpenAPI, GraphQL,
+    AsyncAPI, MCP server or agent card is publicly reachable. Prior stamp:
+    2026-07-19 backfilled.
+x-coverage:
+  state: gated
+  reason: customer-only-docs
+  detail: >-
+    Balto's ReadMe-hosted Docs Hub at docs.balto.ai HTTP 302s every path —
+    including /reference and /openapi.json — to https://login.balto.ai/?redirect=,
+    and Balto's own Download & Support page states the hub holding its "Full API
+    Documentation" is "available exclusively to current customers with Balto Cloud
+    login credentials".
+  evidence:
+  - url: https://docs.balto.ai/reference
+    status: 302
+  - url: https://docs.balto.ai/openapi.json
+    status: 302
+  - url: https://www.balto.ai/download-balto/
+    status: 200
+  - url: https://status.balto.ai/api/v2/components.json
+    status: 200
+  checked: '2026-08-14'
