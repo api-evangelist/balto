@@ -1,0 +1,89 @@
+generated: '2026-08-14'
+method: probed
+source: live GET of /.well-known/* on every Balto-controlled host in apis.yml
+note: >-
+  Balto serves NO first-party /.well-known document. Every path on balto.ai and
+  www.balto.ai returns the site 404 page. docs.balto.ai (ReadMe, gated) and
+  trust.balto.ai (Vanta) answer HTTP 200 with an HTML SPA shell for every
+  /.well-known/* path — a catch-all, not a document, so both are recorded as
+  misses. status.balto.ai does return a real RFC 9116 security.txt, but it is
+  Atlassian Statuspage's vendor file (Canonical: https://www.atlassian.com/.well-known/security.txt,
+  Contact: security@atlassian.com) served on the delegated status subdomain — it
+  is NOT Balto's disclosure policy, so no SecurityTxt/WellKnown pointer is wired
+  into apis.yml for it.
+hosts:
+- host: https://balto.ai
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+- host: https://www.balto.ai
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+- host: https://docs.balto.ai
+  note: >-
+    ReadMe-hosted docs hub (CNAME ssl.readmessl.com) that 302s every path to
+    login.balto.ai. The 200s below are the login SPA shell (3,109 bytes of HTML),
+    not documents.
+  documents:
+  - {path: /.well-known/security.txt, status: 200, document: false, content_type: text/html, note: SPA shell}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 200, document: false, content_type: text/html, note: SPA shell}
+  - {path: /.well-known/agent-card.json, status: 200, document: false, content_type: text/html, note: SPA shell}
+  - {path: /.well-known/agent.json, status: 200, document: false, content_type: text/html, note: SPA shell}
+- host: https://login.balto.ai
+  documents:
+  - {path: /.well-known/security.txt, status: 403, note: S3 AccessDenied}
+  - {path: /.well-known/openid-configuration, status: 403}
+  - {path: /.well-known/oauth-authorization-server, status: 403}
+  - {path: /.well-known/api-catalog, status: 403}
+  - {path: /.well-known/ai-plugin.json, status: 403}
+  - {path: /.well-known/agent-card.json, status: 403}
+  - {path: /.well-known/agent.json, status: 403}
+- host: https://status.balto.ai
+  note: Atlassian Statuspage (CNAME xg8s3bsd3dwz.stspg-customer.com).
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    document: true
+    first_party: false
+    content_type: text/plain
+    note: >-
+      Atlassian's own PGP-signed security.txt, served by Statuspage on every
+      customer status subdomain. Canonical points at atlassian.com. Not Balto's.
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+- host: https://trust.balto.ai
+  note: >-
+    Vanta-hosted trust center (CNAME cname.vantatrust.com). Answers 200 with the
+    same 4,364-byte HTML shell for every /.well-known/* path — a catch-all.
+  documents:
+  - {path: /.well-known/security.txt, status: 200, document: false, content_type: text/html, note: SPA catch-all}
+  - {path: /.well-known/openid-configuration, status: 200, document: false, content_type: text/html, note: SPA catch-all}
+  - {path: /.well-known/oauth-authorization-server, status: 200, document: false, content_type: text/html, note: SPA catch-all}
+  - {path: /.well-known/api-catalog, status: 200, document: false, content_type: text/html, note: SPA catch-all}
+  - {path: /.well-known/ai-plugin.json, status: 200, document: false, content_type: text/html, note: SPA catch-all}
+  - {path: /.well-known/agent-card.json, status: 200, document: false, content_type: text/html, note: SPA catch-all}
+  - {path: /.well-known/agent.json, status: 200, document: false, content_type: text/html, note: SPA catch-all}
+summary:
+  hosts_probed: 6
+  paths_probed: 42
+  first_party_documents: 0
+  agent_card_found: false
+  pointer_emitted: false

@@ -1,0 +1,38 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: Balto
+providerId: balto
+generated: '2026-08-14'
+created: '2026-08-14'
+modified: '2026-08-14'
+method: searched
+source: https://docs.balto.ai/
+sources:
+- https://docs.balto.ai/
+- https://www.balto.ai/docs/
+- https://www.balto.ai/integrations/call-data-api/
+description: >-
+  No rate limits are published on Balto's public surface. Balto's full API
+  documentation lives in the Docs Hub at docs.balto.ai, which is a ReadMe-hosted
+  site that HTTP 302s EVERY path — including /reference and /openapi.json — to
+  https://login.balto.ai/?redirect=... Balto states plainly on
+  https://www.balto.ai/download-balto/ that "The Docs Hub is available
+  exclusively to current customers with Balto Cloud login credentials" and that
+  it is where "Full API Documentation" sits. The public Call Data API product
+  page carries no limits, no headers, and no throttling status code. Nothing was
+  observed on a live unauthenticated response because there is no reachable
+  unauthenticated Balto API endpoint to observe. This is an honest zero, not an
+  absence of limits — limits very likely exist behind the customer login.
+tags:
+- Contact Center AI
+- Call Data API
+limit_count: 0
+limits: []
+headers: {}
+responseCodes: {}
+evidence:
+- {url: 'https://docs.balto.ai/reference', status: 302, note: 'redirects to https://login.balto.ai/?redirect=%2Freference'}
+- {url: 'https://docs.balto.ai/openapi.json', status: 302, note: 'redirects to login'}
+- {url: 'https://www.balto.ai/integrations/call-data-api/', status: 200, note: 'marketing page; no limits documented'}
+- {url: 'https://www.balto.ai/download-balto/', status: 200, note: 'states Docs Hub is customer-login only'}

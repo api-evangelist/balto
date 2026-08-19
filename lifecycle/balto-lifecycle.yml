@@ -1,17 +1,64 @@
-generated: '2026-07-18'
+generated: '2026-08-14'
 method: searched
 source: https://status.balto.ai/
+sources:
+- https://status.balto.ai/
+- https://status.balto.ai/api/v2/components.json
+- https://www.balto.ai/terms/support-services/
+- https://www.balto.ai/download-balto/
 status_page: https://status.balto.ai/
+status_page_api: https://status.balto.ai/api/v2/summary.json
+status_page_platform: Atlassian Statuspage
+status_components:
+- {name: Balto Agent App, status: operational}
+- {name: Balto Cloud, status: operational}
+- {name: Balto Data API, status: operational}
+- {name: Balto Real-time Coaching, status: operational}
+- {name: Balto Real-time Quality Assurance, status: operational}
+status_components_note: >-
+  "Balto Data API" is a first-class, separately-monitored component on Balto's own
+  status page — independent confirmation that Balto operates a production API
+  product, even though its contract and base URL are not published publicly.
+  Observed 2026-08-14 via the Statuspage components API.
 versioning:
   scheme: unknown
+  current: null
+  docs: null
   notes: >-
-    Balto operates a public API surface (Call Data API and softphone/integration
-    APIs) documented at docs.balto.ai, but the developer documentation sits behind
-    an authenticated login (login.balto.ai), so a public versioning/deprecation
-    policy could not be verified.
+    Balto operates a public-facing API product (the Call Data API, plus softphone
+    and CCaaS integration APIs) documented in the Docs Hub at docs.balto.ai. That
+    hub is ReadMe-hosted and HTTP 302s every path — including /reference and
+    /openapi.json — to https://login.balto.ai/. Balto states on
+    https://www.balto.ai/download-balto/ that the Docs Hub, which contains "Full
+    API Documentation", "is available exclusively to current customers with Balto
+    Cloud login credentials". No versioning scheme, version header, or version
+    path segment is therefore verifiable from outside the customer login.
 deprecation:
   policy_url: null
   sunset_header: null
+  notes: >-
+    No deprecation or sunset policy is published on any public Balto page. No
+    Deprecation pointer is wired into apis.yml — nothing was found to point at.
 sla:
-  url: null
+  url: https://www.balto.ai/terms/support-services/
+  uptime_target: null
+  notes: >-
+    Balto publishes a Support Services terms page and states on
+    https://www.balto.ai/security/ that it guarantees "the quality, reliability,
+    and up-time of our services for each of our customers", but no numeric uptime
+    target or credit schedule is published publicly — SLAs are per-contract.
+changelog: null
+changelog_notes: >-
+  No dated changelog or release-notes page exists on the public site
+  (/changelog/, /release-notes/, /product-updates/ all return 404, and the
+  provider's own llms.txt page inventory lists none). Release communication runs
+  through webinars (e.g. "Balto's Spring Release: Coaching, Compliance, and
+  Insights") and the blog, neither of which is a structured changelog. No
+  ChangeLog pointer is emitted.
 deprecated_operations: []
+evidence:
+- {url: 'https://status.balto.ai/api/v2/components.json', status: 200}
+- {url: 'https://www.balto.ai/changelog/', status: 404}
+- {url: 'https://www.balto.ai/release-notes/', status: 404}
+- {url: 'https://www.balto.ai/roadmap/', status: 404}
+- {url: 'https://www.balto.ai/terms/support-services/', status: 200}

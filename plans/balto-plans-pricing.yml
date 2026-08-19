@@ -1,0 +1,38 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Balto
+providerId: balto
+generated: '2026-08-14'
+created: '2026-08-14'
+modified: '2026-08-14'
+method: searched
+source: https://www.balto.ai/get-demo/
+sources:
+- https://www.balto.ai/get-demo/
+- https://www.balto.ai/contact/
+description: >-
+  Balto publishes NO pricing page and NO plan tiers. https://www.balto.ai/pricing
+  and /pricing/ both return HTTP 404, and the site navigation carries no pricing
+  entry — every commercial call-to-action across balto.ai routes to "Book a Demo"
+  (https://www.balto.ai/get-demo/) or hello@balto.ai. Balto is sold as a custom
+  enterprise contract quoted on seat count and term; no self-serve plan, no
+  published list price, and no per-seat rate card exists on the provider's own
+  surface. The Call Data API is a capability of that contract rather than a
+  separately priced product, so there is no API price list either.
+tags:
+- Contact Center AI
+- Enterprise
+- Sales-Gated Pricing
+plan_count: 0
+plans: []
+sales_gate:
+  published_pricing: false
+  self_serve: false
+  contact_url: https://www.balto.ai/get-demo/
+  contact_email: hello@balto.ai
+evidence:
+- {url: 'https://www.balto.ai/pricing/', status: 404}
+- {url: 'https://www.balto.ai/pricing', status: 404}
+- {url: 'https://www.balto.ai/get-demo/', status: 200}
+- {url: 'https://www.balto.ai/llms.txt', status: 200, note: 'provider-published page inventory lists no pricing page'}

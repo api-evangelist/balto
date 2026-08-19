@@ -1,0 +1,63 @@
+generated: '2026-08-14'
+method: searched
+source: https://www.balto.ai/security/
+sources:
+- https://www.balto.ai/security/
+- https://trust.balto.ai/
+- https://www.balto.ai/
+note: >-
+  Balto publishes no machine-readable contract (no OpenAPI, GraphQL, AsyncAPI or
+  MCP surface is reachable without a customer login), so no standard below could
+  be derived from a spec. Every entry is asserted from Balto's own published
+  security and compliance pages, or recorded as unverifiable. Program-level
+  compliance (SOC 2, HIPAA, PCI) is captured in security/balto-trust-center.yml;
+  this file records cross-cutting API/security standards conformance.
+standards:
+- id: soc2
+  conforms: true
+  evidence: >-
+    "Balto is SOC 2 compliant" — https://www.balto.ai/security/ ; SOC II badged on
+    the homepage; Vanta-operated trust center at https://trust.balto.ai/
+- id: hipaa
+  conforms: true
+  evidence: >-
+    HIPAA advertised on the Balto homepage and healthcare/health-insurance
+    solution pages; PHI handling described on https://www.balto.ai/security/
+- id: pci-dss
+  conforms: true
+  evidence: >-
+    PCI advertised on the homepage; https://www.balto.ai/security/ describes
+    automatic flagging of credit-card data with no persistence to disk
+- id: tls-1.2-minimum
+  conforms: true
+  evidence: >-
+    "HTTPS & TLS 1.2 — all browser communication is encrypted and authenticated"
+    (https://www.balto.ai/security/). Live probe of balto.ai negotiated TLSv1.3
+    with HSTS max-age 63072000 (security/balto-domain-security.yml).
+- id: rfc9116-security-txt
+  conforms: false
+  evidence: >-
+    No first-party /.well-known/security.txt on balto.ai, www.balto.ai,
+    docs.balto.ai or login.balto.ai (well-known/balto-well-known.yml). The 200 on
+    status.balto.ai is Atlassian Statuspage's vendor file, not Balto's.
+- id: oauth2
+  conforms: unverifiable
+  evidence: >-
+    Balto Cloud operates a login portal at login.balto.ai and the docs hub gates
+    on it, but no OAuth/OIDC discovery document is served and no securityScheme
+    is published, so the API's auth model cannot be verified from outside.
+- id: openid-connect
+  conforms: unverifiable
+  evidence: '/.well-known/openid-configuration returns 404 on every Balto host'
+- id: rfc9457-problem-details
+  conforms: unverifiable
+  evidence: no public OpenAPI or error reference to inspect
+- id: rfc8594-sunset-header
+  conforms: unverifiable
+  evidence: no public deprecation policy (lifecycle/balto-lifecycle.yml)
+- id: asyncapi
+  conforms: false
+  evidence: >-
+    No event, streaming or webhook specification is published. The "Audio
+    Ingestion" and "Streams" integration pages are marketing pages with no
+    protocol, endpoint or payload documentation.
