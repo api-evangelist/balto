@@ -29,3 +29,15 @@
   relationship: platform-app
   status: not-a-workflow
   arazzo: null
+- slug: balto-talkdesk-own
+  label: Talkdesk (own)
+  partner: talkdesk
+  partner_name: Talkdesk (own)
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://appconnect.talkdesk.com/apps/balto-real-time-guidance
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
