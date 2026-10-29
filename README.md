@@ -64,6 +64,106 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Balto is a company surfaced as a portfolio company of sierra-ventures and added to the API Evangelist network as a stub for enrichment. Sector: ai. This profile is a lead awaiting the enrichment pipeline.
+Balto is a contact center AI platform that pairs live human agents with real-time AI to improve conversation quality, compliance, efficiency, and revenue. Its unified system delivers real-time agent guidance (Agent Assist), automated quality assurance that auto-scores 100% of interactions, real-time compliance monitoring and risk alerting, AI coaching, call summarization (Real-Time Notetaker), omnichannel voice and digital support, and a Voice AI Agent (Togo) for high-volume repeatable calls. Balto integrates with 50+ contact center (CCaaS) platforms including Five9, Genesys, Amazon Connect, NICE inContact, RingCentral, and Convoso, and exposes a Call Data API for exporting historical call records into external systems and data warehouses. Founded in St. Louis, Balto is backed by Sierra Ventures. This profile was enriched from Balto's public web surface; the Docs Hub at docs.balto.ai is a ReadMe-hosted site that redirects every path, including /reference and /openapi.json, to login.balto.ai, and Balto states the hub — which holds its full API documentation — is available exclusively to current customers with Balto Cloud credentials, so no public OpenAPI, GraphQL, AsyncAPI or MCP contract was available to harvest.
 
-Backed by: sierra-ventures — https://balto.ai/
+**Areas:** Company · Artificial Intelligence · Contact Center · Conversation Intelligence · Agent Assist · Real-Time Guidance · Quality Assurance · Compliance · Call Center · CCaaS · Voice AI
+
+## Balto on APIs.io
+
+Everything profiled for Balto is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/balto/](https://apis.io/providers/balto/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Balto Call Data API](https://apis.io/apis/balto/balto-call-data-api/) — Balto's Call Data API gives customers programmatic access to their historical call records so they can transfer, analyse and activate that data in a CRM,…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Balto Domain Security](https://apis.io/security/balto/balto-domain-security/)
+- [Balto Trust Center](https://apis.io/security/balto/balto-trust-center/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Balto Plans Pricing](https://apis.io/plans/balto/balto-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Balto Rate Limits](https://apis.io/rate-limits/balto/balto-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://balto.ai/)
+- [Documentation](https://www.balto.ai/docs/)
+- [Sign up](https://www.balto.ai/get-demo/)
+- [Support](https://www.balto.ai/contact/)
+- [Blog](https://www.balto.ai/blog/)
+- [Compliance](https://www.balto.ai/security/)
+- [Trust centre](https://trust.balto.ai/)
+- [Terms of service](https://www.balto.ai/terms/terms-of-service/)
+- [Privacy policy](https://www.balto.ai/terms/privacy-policy/)
+- [GitHub](https://github.com/BaltoSoftware)
+- [Status](https://status.balto.ai/)
+
+## API Evangelist rating
+
+**Kin Score 25.3** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 64.3 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 18.4 |
+| Developer ergonomics | 26.2 |
+| Access clarity | 42.1 |
+
+**Agent readiness 2.5** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 21.8** — AI & Biometrics
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/balto/](https://apis.io/providers/balto/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Balto: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/balto/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
